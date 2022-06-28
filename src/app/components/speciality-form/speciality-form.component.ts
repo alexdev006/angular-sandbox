@@ -35,6 +35,19 @@ export class SpecialityFormComponent implements OnInit {
     });
   }
 
+  addEmail(): void {
+    this.references.push(this.fb.control(''));
+  }
+
+  selectLocation(event): void {
+    this.specialityForm.patchValue({
+      preferredLocation: event.target.value,
+    });
+  }
+
+  removeEmail(index: number): void {
+    this.references.removeAt(index);
+  }
   onSubmit(): void {
     console.log('le form ici', this.specialityForm);
   }
