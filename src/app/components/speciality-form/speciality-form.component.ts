@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
 
 @Component({
   selector: 'app-speciality-form',
@@ -26,11 +26,20 @@ export class SpecialityFormComponent implements OnInit {
         cats: false,
         reptiles: false,
       }),
+      references: this.fb.array([this.fb.control('')]), //entre crochet ici
 
       emploiRh: this.fb.group({
         emploi: '',
         codeEmploi: '',
       }),
     });
+  }
+
+  onSubmit(): void {
+    console.log('le form ici', this.specialityForm);
+  }
+
+  get references() {
+    return this.specialityForm.get('references') as FormArray;
   }
 }

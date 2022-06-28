@@ -1,0 +1,14 @@
+.formContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  width: 60vh;
+  border: solid 1px lightseagreen;
+  border-radius: 0.25em;
+  padding: 0.25em;
+}

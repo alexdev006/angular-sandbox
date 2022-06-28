@@ -1,1 +1,30 @@
-<p>Form ici</p>
+<div class="formContainer">
+  <div><h3>classic form</h3></div>
+  <div>
+    <form [formGroup]="specialityForm">
+      <h2>Personnal informations</h2>
+      <label> First Name: <input type="text" placeholder="required" />* </label>
+      <label>Phone number: <input type="text" placeholder="required" /> </label>
+      <label> Select prefered location: </label>
+      <select>
+        <option *ngFor="let loc of locations" [ngValue]="loc">{{ loc }}</option>
+      </select>
+      <h2>Please select animals</h2>
+      <div class="grouping">
+        <label>Dogs <input type="checkbox" /></label>
+        <label>Cats <input type="checkbox" /></label>
+        <label>Reptiles<input type="checkbox" /></label>
+      </div>
+      <h2>References</h2>
+      <div>
+        <label>
+          Reference email
+          <input type="text" placeholder="optional" />
+          <button type="button" id="remove_email">X</button>
+        </label>
+      </div>
+      <button type="button">Add another reference</button>
+      <button id="apply_button">Apply</button>
+    </form>
+  </div>
+</div>
